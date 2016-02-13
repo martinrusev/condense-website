@@ -1,0 +1,14 @@
+{
+  "name": "condense-gulp",
+  "version": "1.0.0",
+  "description": "Gulp Dependencies",
+  "scripts": {
+    "gulp": "gulp",
+    "postinstall": "npm rebuild gulp-sass node-sass;"
+  },
+  "dependencies": {
+    "gulp": "^3.9.0",
+    "gulp-notify": "^2.2.0",
+    "gulp-sass": "^2.2.0"
+  }
+}

@@ -1,0 +1,143 @@
+@import "_colors";
+
+@mixin rem($property, $values) {
+	// Create a couple of empty lists as output buffers.
+	$base-font-size: 16px;
+	$font-size: $base-font-size;
+	$px-values: ();
+	$rem-values: ();
+
+	// Loop through the $values list
+	@each $value in $values {
+		// For each property value, if it's in rem or px, derive both rem and
+		// px values for it and add those to the end of the appropriate buffer.
+		// Ensure all pixel values are rounded to the nearest pixel.
+		@if $value == 0 or $value == 0px {
+			// 0 -- use it without a unit
+			$px-values: join($px-values, 0);
+			$rem-values: join($rem-values, 0);
+		} @else if type-of($value) == number and not unitless($value) and (unit($value) == px) {
+			// px value given - calculate rem value from font-size
+			$new-rem-value: $value / $font-size;
+			$px-values: join($px-values, round($value));
+			$rem-values: join($rem-values, #{$new-rem-value}rem);
+		} @else if type-of($value) == number and not unitless($value) and (unit($value) == "%") {
+			// % value given - don't add px or rem
+			$px-values: join($px-values, #{$value});
+			$rem-values: join($rem-values, #{$value});
+		} @else if $value == auto {
+			// auto - don't add px or rem
+			$px-values: join($px-values, auto);
+			$rem-values: join($rem-values, auto);
+		} @else {
+			// unitless value - use those directly as rem and calculate the px-fallback
+			$px-values: join($px-values, round($value * $font-size));
+			$rem-values: join($rem-values, #{$value}rem);
+		}
+	}
+
+	// output the converted rules
+	#{$property}: $px-values;
+	#{$property}: $rem-values;
+}
+
+@mixin breakpoint($point) {
+		@if $point == mobile {
+		 /*320px and up*/
+		 @media (max-width: 40em) { @content; }
+		} @elseif $point == medium {
+				@media (min-width: 30em) { @content; } /*480px and up*/
+		} @elseif $point == medium-big-down {
+				@media (max-width: 41.188em) { @content; } /*659px and down*/
+		} @elseif $point == medium-big {
+				@media (min-width: 41.250em) { @content; } /*660px and up*/
+		} @elseif $point == tablet-down {
+		/*767px and down*/		@media (max-width: 47.938em) { @content; }
+		} @elseif $point == tablet {
+				@media (min-width: 48.000em) { @content; } /*768px and up*/
+		} @elseif $point == desktop-down {
+				@media (max-width: 56.188em) { @content; } /*899px and down*/
+		} @elseif $point == desktop {
+				@media (min-width: 56.250em) { @content; } /*900px and up*/
+		} @elseif $point == desktop-big {
+				/*1110px and up*/
+				@media (min-width: 69.375em) { @content; }
+		} @elseif $point == retina {
+				@media
+						only screen and (-webkit-min-device-pixel-ratio: 2),
+						only screen and (   min--moz-device-pixel-ratio: 2),
+						only screen and (     -o-min-device-pixel-ratio: 2/1),
+						only screen and (        min-device-pixel-ratio: 2),
+						only screen and (                min-resolution: 192dpi),
+						only screen and (                min-resolution: 2dppx) {
+								@content;
+				}
+		}
+}
+
+@mixin selection($color) {
+	&::selection {
+		background: $color;
+		color: white;
+	}
+	&::-moz-selection {
+		background: $color;
+		color: white;
+	}
+}
+
+@mixin grayscale() {
+	filter: url("data:image/svg+xml;utf8,<svg xmlns=\'http://www.w3.org/2000/svg\'><filter id=\'grayscale\'><feColorMatrix type=\'matrix\' values=\'0.3333 0.3333 0.3333 0 0 0.3333 0.3333 0.3333 0 0 0.3333 0.3333 0.3333 0 0 0 0 0 1 0\'/></filter></svg>#grayscale"); /* Firefox 10+, Firefox on Android */
+	filter: gray; /* IE6-9 */
+	-webkit-filter: grayscale(100%); /* Chrome 19+, Safari 6+, Safari 6+ iOS */
+}
+@mixin default-border-radius {
+	@include border-radius(6px);
+}
+
+
+/* MIXINS */
+@mixin placeholder($color){
+	&::-webkit-input-placeholder {
+		color: $color;
+	}
+	&:-moz-placeholder { /* Firefox 18- */
+		color: $color;
+		opacity: 1;
+	}
+	&::-moz-placeholder { /* Firefox 19+ */
+		color: $color;
+		opacity: 1;
+	}
+	&:-ms-input-placeholder {
+		color: $color;
+	}
+}
+
+@mixin master-transition {
+	@include transition(0.3s);
+}
+
+
+@mixin default-text {
+	@include rem (font-size, 1.2);
+	@include rem (line-height, 2);
+	letter-spacing: .01rem;
+	color: $text_color;
+}
+
+@mixin default-link {
+	color: $primary_color;
+	text-decoration: none;
+	outline: none;
+	// white-space: nowrap;
+	@include rem (font-size, 1.2);
+	@include rem (line-height, 1.5);
+	&::before, &::after {
+			pointer-events: none;
+			backface-visibility: hidden;
+		}
+	&:hover {
+		text-decoration: underline;
+	}
+}

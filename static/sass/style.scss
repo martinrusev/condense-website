@@ -1,0 +1,84 @@
+@import "_colors";
+@import "_mixins";
+@import "bourbon/bourbon";
+@import "_normalize";
+
+
+@mixin border-radius($box) {
+  @include prefixer(border-radius, $box, webkit moz spec);
+}
+
+/* apply a natural box layout model to all elements */
+*, *:before, *:after {
+	box-sizing: border-box;
+ }
+
+/* VARIABLES */
+
+$body_width: 1280px;
+/* VARIABLES END */
+
+
+/* MIXINS END */
+
+
+/* RESETS */
+* {
+	text-decoration: none;
+	outline: none;
+}
+.clearfix {
+	zoom:1;
+	&:before, &:after {
+		content: "\0020";
+		display: block;
+		height: 0;
+		overflow: hidden;
+	}
+	&:after {
+		clear: both;
+	}
+}
+html {
+  height: 100%;
+}
+body {
+	font-family: "Lato", Helvetica, sans-serif;
+	font-size: 62.5%;
+ 	height: 100%;
+}
+
+input, input::-moz-focus-inner {
+	border: none;
+}
+
+input {
+	-webkit-appearance: none;
+	@include border-radius(0);
+	border: none;
+}
+
+input:focus, textarea:focus, input:focus::-moz-focus-inner {
+	outline: none;
+	border: none;
+}
+.wrapper {
+	width: 100%;
+	margin: 0 auto;
+	@include breakpoint(desktop-big) {
+		width: 1280px;
+  }
+}
+body {
+
+}
+header {
+	text-align: center;
+	img {
+		margin-top: 20px;
+		text-align: center;
+		@include breakpoint(desktop-big) {
+			width: 400px;
+  		}
+	}
+}

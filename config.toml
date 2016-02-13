@@ -1,0 +1,4 @@
+baseurl = "https://condense.amon.cx/"
+languageCode = "en-us"
+title = "Condense"
+metaDataFormat="yaml"

@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="{{ with .Site.LanguageCode }}{{ . }}{{ else }}en-US{{ end }}">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width initial-scale=1" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+<title>{{ .Site.Title }}</title>
+<meta name="description" content="{{ with .Site.Params.name }}{{ . }}{{ end }}">
+<link href='https://fonts.googleapis.com/css?family=Lato&subset=latin,latin-ext' rel='stylesheet' type='text/css'>
+<link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
+<link rel="stylesheet" href="{{ .Site.BaseURL }}css/style.css">
+<link rel="icon" sizes="64x64" type="image/png" href="{{ .Site.BaseURL }}images/favicon.png" />
+
+<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+<!--[if lt IE 9]>
+<script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+<![endif]-->
+</head>
