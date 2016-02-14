@@ -1,7 +1,8 @@
+@import "_normalize";
 @import "_colors";
 @import "_mixins";
 @import "bourbon/bourbon";
-@import "_normalize";
+
 
 
 @mixin border-radius($box) {
@@ -77,8 +78,24 @@ header {
 	img {
 		margin-top: 20px;
 		text-align: center;
+        width: 300px;
 		@include breakpoint(desktop-big) {
 			width: 400px;
   		}
+	}
+}
+section.content--block {
+	margin: 0 auto;
+	width: 100%;
+	text-align: center;
+	margin-top: 20px;
+    @include breakpoint(desktop-big) {
+			width: 900px;
+  	}
+	p {
+		@include default-text;
+		width: 100%;
+		text-align: center;
+        padding: 20px;
 	}
 }
