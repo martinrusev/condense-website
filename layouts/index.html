@@ -3,12 +3,26 @@
 <body >
   {{ partial "nav.html" . }}
 
+
+
 <section class="content--block">
-  <p>Condense is a cloud orchestration tool that enables you to quickly model, deploy, manage and monitor your whole infrastructure</p>
+   <h2>Build</h2>
+  <p class="center">Model your cloud services with a few clicks. An intuitive, universal interface that works across Amazon Web Services, DigitalOcean, Google Compute Cloud and Microsoft Azure. <br>Condense uses <a href="https://www.terraform.io/">Terraform</a> as a provisioning backend and all th
+  </p>
+
+<div class="features__browser">
+        <div class="features__browser__heading">
+          <ul>
+            <li><span class="red"></span></li>
+            <li><span class="green"></span></li>
+            <li><span class="yellow"></span></li>
+          </ul>
+        </div>
+        <img src="{{ .Site.BaseURL }}images/build-illustration.png" alt="">
+      </div>
 
   
-  <h2>Build</h2>
-  <p>Create/Resize/Delete your servers with a few clicks. Works great with AWS, DigitalOcean, Google Compute Cloud and Microsoft Azure</p>
+
   <h2>Provision</h2>
   <p>Automatically apply your CAPS(Chef, Ansible, Puppet and Salt) provisioning scripts. Condense will run them in parallel and report execution stats in real time. </p>
   <h2>Manage</h2>

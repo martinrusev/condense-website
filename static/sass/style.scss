@@ -1,13 +1,12 @@
 @import "_normalize";
 @import "_colors";
+@import "_elements";
 @import "_mixins";
 @import "bourbon/bourbon";
 
 
 
-@mixin border-radius($box) {
-  @include prefixer(border-radius, $box, webkit moz spec);
-}
+
 
 /* apply a natural box layout model to all elements */
 *, *:before, *:after {
@@ -75,6 +74,8 @@ body {
 }
 header {
 	text-align: center;
+	background:$odd;
+	padding-bottom: 20px;
 	img {
 		margin-top: 20px;
 		text-align: center;
@@ -83,19 +84,42 @@ header {
 			width: 400px;
   		}
 	}
+	p {
+		@include default-text; 
+		 padding: 20px;
+		 &.center {
+        	@include breakpoint(desktop-big) {
+				width: 800px;
+				margin: 0 auto;
+  			}
+        }
+	}
 }
 section.content--block {
 	margin: 0 auto;
 	width: 100%;
 	text-align: center;
 	margin-top: 20px;
-    @include breakpoint(desktop-big) {
-			width: 900px;
-  	}
+	h2 {
+		margin-top: 20px;
+		margin-bottom: 20px;
+		@include clear;
+	}
+	a {
+		@include default-link;
+		
+
+	}
+    
 	p {
 		@include default-text;
 		width: 100%;
 		text-align: center;
         padding: 20px;
+        @include breakpoint(desktop-big) {
+				width: 800px;
+				margin: 0 auto;
+  			}
+        
 	}
 }
