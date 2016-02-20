@@ -7,6 +7,7 @@ div.features__browser {
 	&__heading {
 		min-width: 500px;
 		background: $odd;
+		border-bottom: 2px solid $odd_dark;
 		width: 100%;
 		margin: 0px;
 		float: left;
@@ -38,8 +39,8 @@ div.features__browser {
 		}
 	}
 	img {
-		width: 100%;
+		width: auto;
 	}
-	border: 2px solid $odd;
+	border: 2px solid $odd_dark;
 	@include border-radius(6px);
 }

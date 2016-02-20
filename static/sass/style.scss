@@ -15,7 +15,7 @@
 
 /* VARIABLES */
 
-$body_width: 1280px;
+$body_width: 1400px;
 /* VARIABLES END */
 
 
@@ -66,7 +66,7 @@ input:focus, textarea:focus, input:focus::-moz-focus-inner {
 	width: 100%;
 	margin: 0 auto;
 	@include breakpoint(desktop-big) {
-		width: 1280px;
+		width: $body_width;
   }
 }
 body {
@@ -74,6 +74,7 @@ body {
 }
 header {
 	text-align: center;
+	border-bottom: 4px solid $odd_dark;
 	background:$odd;
 	padding-bottom: 20px;
 	img {
@@ -94,6 +95,14 @@ header {
   			}
         }
 	}
+}
+section.invite {
+	background:$odd;
+	border-bottom: 5px solid $odd_dark;
+	border-top: 5px solid $odd_dark;
+	padding-top: 40px;
+	padding-bottom: 40px;
+	margin-bottom: 20px;
 }
 section.content--block {
 	margin: 0 auto;
