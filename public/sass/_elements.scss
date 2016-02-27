@@ -1,0 +1,47 @@
+@import "_mixins";
+@import "_colors";
+
+div.features__browser {
+	float: left;
+	width: 100%;
+	clear: both;
+	&__heading {
+		min-width: 500px;
+		background: $odd;
+		border-bottom: 2px solid $odd_dark;
+		width: 100%;
+		margin: 0px;
+		float: left;
+		height: 40px;
+		border-top-radius: 6px;
+		ul {
+			float: left;
+			margin: 15px;
+			li {
+				float: left;
+				margin-right: 5px;
+				span {
+					background: $orange;
+					width: 12px;
+					display: block;
+					height: 12px;
+					@include border-radius(50%);
+					&.green {
+						background: $green;
+					}
+					&.yellow {
+						background: $yellow;
+					}
+					&.red {
+						background: $red;
+					}
+				}
+			}
+		}
+	}
+	img {
+		width: auto;
+	}
+	border: 2px solid $odd_dark;
+	@include border-radius(6px);
+}

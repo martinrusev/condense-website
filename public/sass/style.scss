@@ -1,0 +1,172 @@
+@import "_normalize";
+@import "_colors";
+@import "_elements";
+@import "_mixins";
+@import "bourbon/bourbon";
+
+
+
+
+
+/* apply a natural box layout model to all elements */
+*, *:before, *:after {
+	box-sizing: border-box;
+ }
+
+/* VARIABLES */
+
+$body_width: 1400px;
+/* VARIABLES END */
+
+
+/* MIXINS END */
+
+
+/* RESETS */
+* {
+	text-decoration: none;
+	outline: none;
+}
+.clearfix {
+	zoom:1;
+	&:before, &:after {
+		content: "\0020";
+		display: block;
+		height: 0;
+		overflow: hidden;
+	}
+	&:after {
+		clear: both;
+	}
+}
+html {
+  height: 100%;
+}
+body {
+	font-family: "Lato", Helvetica, sans-serif;
+	font-size: 62.5%;
+ 	height: 100%;
+}
+
+input, input::-moz-focus-inner {
+	border: none;
+}
+
+input {
+	-webkit-appearance: none;
+	@include border-radius(0);
+	border: none;
+}
+
+input:focus, textarea:focus, input:focus::-moz-focus-inner {
+	outline: none;
+	border: none;
+}
+.wrapper {
+	width: 100%;
+	margin: 0 auto;
+	@include breakpoint(desktop-big) {
+		width: $body_width;
+  }
+}
+body {
+
+}
+header {
+	text-align: center;
+	border-bottom: 4px solid $odd_dark;
+	background:$odd;
+	padding-bottom: 20px;
+	img {
+		margin-top: 20px;
+		text-align: center;
+        width: 300px;
+		@include breakpoint(desktop-big) {
+			width: 400px;
+  		}
+	}
+	p {
+		@include default-text; 
+		 padding: 20px;
+		 &.center {
+        	@include breakpoint(desktop-big) {
+				width: 800px;
+				margin: 0 auto;
+  			}
+        }
+	}
+}
+section.invite {
+	background:$odd;
+	border-bottom: 5px solid $odd_dark;
+	border-top: 5px solid $odd_dark;
+	padding-top: 20px;
+	padding-bottom: 40px;
+	margin-bottom: 20px;
+	p{
+		padding-bottom: 20px;
+
+	}
+	@include clear;
+	a.button {
+		background:$orange;
+		padding: 20px;
+		color: white;
+		text-decoration: none;
+		display: inline-block;
+		border: 3px solid $orange;
+		margin-top: 30px;
+		@include default-border-radius;
+		&:hover {
+			background: white;
+			color: $orange;
+		}
+	}
+}
+section.content--block {
+	margin: 0 auto;
+	@include clear;
+	width: 100%;
+	text-align: center;
+	margin-top: 20px;
+	h2 {
+		margin-top: 20px;
+		margin-bottom: 20px;
+		@include clear;
+	}
+	a {
+		@include default-link;
+		
+
+	}
+    
+	p {
+		@include default-text;
+		width: 100%;
+		text-align: center;
+        padding: 20px;
+        @include breakpoint(desktop-big) {
+				width: 800px;
+				margin: 0 auto;
+  			}
+        
+	}
+	ol {
+		@include default-text;
+		width: 600px;
+		text-align: center;
+		margin: 0 auto;
+		margin-top: 50px;
+		li {
+			
+			display: inline-block;
+			width: 100%;
+			@include clear;
+			margin-bottom: 20px;
+			text-align: left;
+			h3 {
+				margin-bottom: 10px;
+			}
+		}
+	}
+}
