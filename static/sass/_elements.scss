@@ -4,6 +4,7 @@
 div.features__browser {
 	float: left;
 	width: 100%;
+	clear: both;
 	&__heading {
 		min-width: 500px;
 		background: $odd;

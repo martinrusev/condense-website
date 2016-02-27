@@ -9,6 +9,7 @@
 <section class="content--block">
    <h2>Build</h2>
   <p class="center">Model your cloud services with a few clicks. An intuitive, universal interface that works across Amazon Web Services, DigitalOcean, Google Compute Cloud and Microsoft Azure. 
+  
   </p>
 
 <div class="features__browser">
@@ -25,7 +26,7 @@
   
 
   <h2>Provision</h2>
-  <p>Automatically apply your CAPS(Chef, Ansible, Puppet and Salt) provisioning scripts. Condense will run them in parallel and report execution stats in real time. </p>
+  <p>Automatically apply your CAPS(Chef, Ansible, Puppet and Salt) provisioning scripts. Condense will run them in parallel and report execution stats in real time. You can apply provisioning scripts on build, schedule, retry, receive notifications on failure, etc. </p>
 
   <div class="features__browser">
         <div class="features__browser__heading">
@@ -39,25 +40,65 @@
       </div>
 
 
-  <h2>Monitor</h2>
-  <p>Have a complete visibility over your infrastructure out of the box - from general system metrics like CPU, Memory, Disk usage and network throughput to service checks like open ports and individual process metrics. 
+<h2>Frequently Asked Questions</h2>
+<ol>
+  <li>
+  <h3>What is Condense?</h3>
 
-  Condense automatically syncs officially provided metrics for your services, 
- like Amazon CloudWatch for example.
- <br><br>The monitoring in Condense is built around the solid base already established in <a href="https://amon.cx">Amon</a>.</p>
+Condense is a service modelling tool by <a href="https://twitter.com/martin_rusev">Martin Rusev</a>, the creator of <a href="https://www.amon.cx/">Amon</a>. Condense allows you to model, configure, provision, maintain, deploy and scale cloud services quickly and efficiently on public clouds. 
+</li>
+<li>
+<h3>How does Condense work?</h3>
+Condense is a GUI build on top of <a href="https://www.terraform.io/">Terraform</a> by Hashicorp. Behind the scenes Condense generates and applies Terraform states.
+</li>
+
+<li>
+<h3>Can I use Condense with Puppet, Chef, Ansible or SaltStack?</h3>
+Condense works with all CAPS tools out of the box. You can mix and match different provisioning scripts - for example you can deploy MySQL with an Ansible playbook and configure security settings with a Puppet manifest. Condense works similarly to Ansible Tower and Puppet Enterpise - you can apply provisioning scripts immediately after the build phase, automatically retry on failure, schedule execution for maintanance related tasks, receive notifications, etc. 
+
+</li>
+
+<li>
+  <h3>What Distros/Operating systems are supported</h3>
+  The Condense client is a single static Golang binary and can run on any Windows or Linux machine. 
+</li>
+
+<li>
+  <h3> In summary, why should I use Condense?</h3>
+</li>
+Condense is the fastest way to quickly model and deploy an OpenStack cloud – reduce the time from days to minutes
+Works with your existing configuration management tool
+Scale your workloads up or down very easily
+No prior knowledge needed of the application stack (contrary to other tools)
+GUI and command line tool – allows you to experiment and visualise what you’re doing
+Includes providers for all major public clouds as well as OpenStack, MAAS and LXC containers
+Offers you a quick and easy environment to test deployments on a local machine
+Charm Store: download optimised charms, each written by the experts in that application
+Deploy entire cloud environments in seconds using bundles. Create a bundle once and re-deploy it in a new environment saving massive time and effort
+Environment portability: deploy the same charms to EC2, OpenStack, your data center and your laptop
+Local providers on LXD containers allow you to re-create the production deployment environment on your laptop, minimising portability issues when deploying to a public cloud, OpenStack, or bare metal
+
+Absolutely. Canonical, the company behind Ubuntu, provides professional, commercial support for the entire Ubuntu cloud suite. Even better, Landscape, our enterprise systems management tool, is included in all of our support packages. Check out Ubuntu Advantage, Canonical’s support programme, and choose the level of service you need: ubuntu.com/cloud/plans-and-pricing</li>
+</ol>
+
+</section> <!-- content block -->
+</section> <!-- wrapper -->
 
 
-</section>
+
 
 <section class='invite content--block'>
    <h2>Sounds Interesting?</h2>
-<p>Condense is currently an invite only pre-alpha. You can request an invite using the form below. </p>
+<p>Condense is currently an invite only pre-alpha. You can request an invite using the form below. 
+
+</p>
+
+<a class='button' href="https://amon.typeform.com/to/r6xQRC">Request an Invite</a>
+
 </section>
 
 
-
-</section> <!-- content -->
-</section> <!-- wrapper -->
+</section>
 
 
 
